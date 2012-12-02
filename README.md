@@ -1,6 +1,4 @@
 webretreat
 ==========
 
-Source code for participating in webretreat sessions.
-
-Code coming soon, available by 8th December 2012.
+Source code for participating in webretreat sessions. More details at webretreat.org, follow @webretreat on twitter.
