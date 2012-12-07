@@ -13,6 +13,7 @@
 <meta name="GENERATOR" content="SmartJelly Content Management 0.2">
 <META http-equiv="Page-Enter" content="blendTrans(Duration=0.2)">
 <META http-equiv="Page-Exit" content="blendTrans(Duration=0.2)">
+<meta name="copyright" content="September 2003"> 
 <meta http-equiv="expires" content="-1"> 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 </head>
@@ -46,14 +47,16 @@ var offset=2;
 var count=0,
 countimgactual=0; 
 var testcell=0;
+var btk = true;
 var ink="red.gif";
 coords=new Array(-51,-50,-49,-1,1,+49,50,51);
-mapactual=new Array();
-tempmapactual=new Array();
+mapactual=new Array(); // load a google map
+tempmapactual=new Array(); // put the google map into a second array
 var neighbours;
 switches=new Array();
 switches["image/black.gif"]="image/white.gif";
 switches["image/white.gif"]="image/black.gif";
+switches["image/red.gif"]="image/red.gif";
 document.write('<TABLE cellpadding=0 cellspacing=0 border=0><TR>');
 for(y=0; y<50; ++y) { row(); }
 document.write('</table>');
@@ -66,6 +69,7 @@ for(g2=0; g2<50; ++g2, ++count)
 countimgactual=count+offset;
 document.write('<TD><A href="#" onClick="ink=switches[mapactual['+count+']];document.images['+countimgactual+'].src=ink;mapactual['+count+']=ink;"><IMG SRC="image/black.gif" WIDTH=6 HEIGHT=6 HSPACE=0 VSPACE=0 BORDER=0 ALIGN="left"></a></td>');
 mapactual[count]="image/black.gif";
+btk=3002;
 }
 }
 
@@ -129,6 +133,20 @@ function run() {
  generation(); 
 }
 
+function displaypoints() {
+ if (g+coords[h]>0 && g+coords[h]<2499) {
+  if (mapactual[g+coords[h]]) {neighbours=neighbours+1;}
+  } else if (g+coords[h]<1) {
+  btk = y2;
+  if (mapactual(y2=0 = y2<2500 < y2++)) {
+  neighbours=neighbours-1;
+  }
+  } else if (g+coords[h]>2498) {
+  if (mapactual[g+coords[h]-2500]<tempmapactual[y2]) {
+  btk = tempmapactual[y2];
+  neighbours=neighbours*100;
+  }}
+}
 
 function gofaster() {
  if (delay > 50) {
@@ -156,6 +174,7 @@ function stopit() {
  document.getElementById('run').disabled = false;
  document.getElementById("stop").disabled = true;
  stop="true";
+ btk = false;
 }
 
 
@@ -326,7 +345,7 @@ title='the little schemer'><img src='image/my_little_schemer_20.png' /><br/>the 
 </div> <!-- end lowermenu -->
 <br>
 <div class='textmenu'>
-<a href="index.asp#top">home</a> .: 
+<a href="index.asp#top"><marquee>home</marquee></a> .: 
 <a href="about.asp">about</a> .: 
 <a href="signup.asp">sign up</a> .: 
 <a href="sitemap.asp">sitemap</a> .:  

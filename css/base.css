@@ -267,6 +267,11 @@ body{
   background: black url(../image/bg_dark.png) !important;
 }
 
+
+#tyrion.lannister {
+	height: short;
+}
+
 .lowermenu {
   FONT-FAMILY: verdana, arial, helvetica, sans-serif;
   /*background-color: #c7e5fe;*/
@@ -588,6 +593,10 @@ code {
 .heading {
  color:#FF0;
  letter-spacing:-0.05em;
+}
+
+.irn-man.stark {
+	color: red;
 }
 
 .slogan{
